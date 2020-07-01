@@ -93,3 +93,6 @@ private Properties getHibernateProperties() {
 ![Annotation 2020-07-01 193534](https://user-images.githubusercontent.com/57157656/86258010-ef936b00-bbd7-11ea-9dcb-cb18b911b1fe.png)
 
 
+![Annotation 2020-07-01 193534(2)](https://user-images.githubusercontent.com/57157656/86258410-6f213a00-bbd8-11ea-93b3-7c63cf0a1e61.png)
+
+
