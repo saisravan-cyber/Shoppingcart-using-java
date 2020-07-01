@@ -88,3 +88,8 @@ private Properties getHibernateProperties() {
 ![Capture1](https://user-images.githubusercontent.com/57157656/86257657-7bf15e00-bbd7-11ea-9065-774eaa6a313c.PNG)
 
 
+=> LOGIN CREDENTIALS PAGE
+
+![Annotation 2020-07-01 193534](https://user-images.githubusercontent.com/57157656/86258010-ef936b00-bbd7-11ea-9dcb-cb18b911b1fe.png)
+
+
