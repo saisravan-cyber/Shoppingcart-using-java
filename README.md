@@ -96,5 +96,13 @@ private Properties getHibernateProperties() {
 
 ![Annotation 2020-07-01 193534(3)](https://user-images.githubusercontent.com/57157656/86258663-b1e31200-bbd8-11ea-8dfd-be6742a611c8.png)
 
+![Annotation 2020-07-01 193534(4)](https://user-images.githubusercontent.com/57157656/86258837-e525a100-bbd8-11ea-84b1-ce95c507e6b9.png)
+
+![Annotation 2020-07-01 193534(5)](https://user-images.githubusercontent.com/57157656/86258871-ef479f80-bbd8-11ea-8f5d-f7eeff1ed9a3.png)
+
+![Annotation 2020-07-01 193534(6)](https://user-images.githubusercontent.com/57157656/86258894-f66ead80-bbd8-11ea-9cb9-8d80785313c4.png)
+
+![Annotation 2020-07-01 193534(7)](https://user-images.githubusercontent.com/57157656/86258930-01c1d900-bbd9-11ea-8721-738fe87dcd37.png)
+
 
 
