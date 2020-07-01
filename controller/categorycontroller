@@ -1,0 +1,136 @@
+package com.niit.shoppingcart.controller;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.google.gson.Gson;
+import com.niit.shoppingcart.dao.CategoryDAO;
+import com.niit.shoppingcart.model.Category;
+import com.niit.shoppingcart.model.Supplier;
+import com.niit.shoppingcart.model.User;
+
+@Controller
+public class CategoryController
+{
+	
+	@Autowired
+	CategoryDAO categoryDAO;
+	
+	@Autowired
+	Category category;
+	
+	@RequestMapping("/category")
+	public ModelAndView startCategory()
+	{  
+		       //log.debug(" Starting of the method startCategory");
+		       ModelAndView mv=new ModelAndView("addCategory");
+		       //log.debug(" End of the method listCategories");
+		       return mv; 
+	}
+	@ModelAttribute("category")
+    public Category createCategory()
+    {
+		//log.debug(" Starting of the method createCategory");
+		return new Category();
+    }
+	@RequestMapping(value = "/manage_categories", method = RequestMethod.GET)
+	public String listCategories(Model model) 
+	{
+		//log.debug(" Starting of the method listCategories");
+		model.addAttribute("category", category);
+		model.addAttribute("categoryList", categoryDAO.list());
+		model.addAttribute("isAdminClickedCategories", "true");
+		//log.debug(" End of the method listCategories");
+		return "manageCategories";
+	}
+	
+	
+	@RequestMapping(value = "/manage_category_add", method = RequestMethod.POST)
+	public String addCategory(@ModelAttribute("category") Category category, Model model)
+	{
+		//log.debug(" Starting of the method addCategory");
+		
+		if (categoryDAO.saveOrUpdate(category) == true)
+		{			
+			model.addAttribute("msg", "Successfully created/updated the caetgory");
+		} 
+		else
+		{
+			model.addAttribute("msg", "not able created/updated the caetgory");
+		}
+		model.addAttribute("category", category);
+		model.addAttribute("categoryList", categoryDAO.list());
+		model.addAttribute("isAdminClickedCategories", "true");
+		//log.debug(" End of the method addCategory");
+		return "manageCategories";
+	}
+
+	@RequestMapping(value="manage_category_edit",method = RequestMethod.GET)
+	public ModelAndView editCategory(@RequestParam int id) 
+	{
+		//log.debug(" Starting of the method editCategory");
+		category = categoryDAO.get(id);
+		//log.debug(" End of the method editCategory");
+		return new ModelAndView("editCategory","category",category);
+	}
+	
+	
+	@RequestMapping(value="updateCategory",method=RequestMethod.POST)
+    public ModelAndView updateCategory(@Valid @ModelAttribute("category")Category category,BindingResult result,Model model)
+    {
+	   // log.debug("Starting of the method updateSupplier"); 
+	    categoryDAO.updateCategory(category);
+	    //log.debug("End of the method updateSupplier");
+		return new ModelAndView("manageCategories");
+    }	 
+		
+	@RequestMapping(value="manage_category_remove")
+	public String deleteCategory(@RequestParam String id) throws Exception 
+	    {
+		//log.debug(" Starting of the method deleteCategory");
+		boolean flag = categoryDAO.deleteCategory(id);
+
+		String msg = "Successfully done the operation";
+		if (flag != true) {
+			msg = "The operation could not success";
+		}
+		
+		
+		//log.debug(" End of the method deleteCategory");
+		return "manageCategories";
+	}
+	@RequestMapping(value = "listCategories", method = RequestMethod.GET, produces = "application/json")
+	public @ResponseBody String showList()
+	{
+		//log.debug("Starting of the method showList");
+		List list = categoryDAO.getAllCategories();
+		Gson x = new Gson();
+		String json = x.toJson(list);
+		//log.debug("End of the method showList");
+		return json;
+	}
+	@RequestMapping("/manageCategory")
+	public ModelAndView manageSuppliers() 
+	{
+		//log.debug("Starting of the method manageCategories");
+		ModelAndView mv = new ModelAndView("manageCategories");
+		//log.debug("Ending of the method manageCategories");
+		return mv;
+	}
+
+}
