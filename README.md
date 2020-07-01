@@ -1,5 +1,7 @@
 # Shoppingcart-using-java
-methods used java,core java,hibernate,bootstrap,spring,ecclipse,h2database,maven dependencies
+methods used java,core java,hibernate,bootstrap,spring,ecclipse,h2database,maven dependencies.
+
+
 𝐒𝐡𝐨𝐩𝐩𝐢𝐧𝐠𝐂𝐚𝐫𝐭 
 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝐚𝐧 𝐞𝐧𝐝 𝐭𝐨 𝐞𝐧𝐝 𝐄𝐜𝐨𝐦𝐦𝐞𝐫𝐜𝐞 𝐰𝐞𝐛 𝐀𝐩𝐩𝐥𝐢𝐜𝐚𝐭𝐢𝐨𝐧 𝐮𝐬𝐢𝐧𝐠 𝐒𝐩𝐫𝐢𝐧𝐠 𝐌𝐕𝐂 𝐰𝐢𝐭𝐡 𝐦𝐮𝐥𝐭𝐢𝐩𝐥𝐞 𝐦𝐨𝐝𝐮𝐥𝐞𝐬
 
@@ -72,6 +74,8 @@ private Properties getHibernateProperties() {
 		properties.put("hibernate.hbm2ddl.auto", "update");
 		//System.out.println("Hibernate Properties");
 		return properties;
+		
+		
 𝐑𝐮𝐧 𝐭𝐡𝐞 𝐬𝐞𝐫𝐯𝐞𝐫.
 
 𝐒𝐨𝐦𝐞𝐭𝐡𝐢𝐧𝐠𝐬 𝐰𝐫𝐨𝐧𝐠!!
