@@ -65,6 +65,7 @@ methods used java,core java,hibernate,bootstrap,spring,ecclipse,h2database,maven
 	    dataSource.setPassword("sa");
 		//System.out.println("Database is connected.....!");
 		return dataSource;
+		
 𝐃𝐚𝐭𝐚𝐛𝐚𝐬𝐞 𝐃𝐢𝐚𝐥𝐞𝐜𝐭:
 
 private Properties getHibernateProperties() {
