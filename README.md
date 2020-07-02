@@ -1,5 +1,5 @@
 # Shoppingcart-using-java
-methods used java,core java,hibernate,bootstrap,spring,ecclipse,h2database,maven dependencies.
+methods used java,core java,hibernate,bootstrap,spring,ecclipse,h2database,maven dependencies,jsppages.
 
 
 𝐒𝐡𝐨𝐩𝐩𝐢𝐧𝐠𝐂𝐚𝐫𝐭 
